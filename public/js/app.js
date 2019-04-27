@@ -56,7 +56,7 @@ function updateDetails(address) {
             <tbody>
                 <tr>
                     <th>Current Time</th>
-                    <td>${dateObj.getHours()}:${dateObj.getMinutes()}:${dateObj.getSeconds()}</td>
+                    <td>${dateObj.getHours()}:${dateObj.getMinutes().toString().padStart(2,0)}:${dateObj.getSeconds().toString().padStart(2,0)}</td>
                 </tr>
                 <tr>
                     <th class="width-20">Max Temmpreature</th>
