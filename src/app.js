@@ -24,14 +24,14 @@ app.use(express.static(homeDirPath));
 app.get('', (req, res) => {
     res.render('index', {
         title: "Weather App",
-        name: 'Ankit jain'
+        name: 'Ankit Jain'
     });
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help',
-        name: 'Ankit jain'
+        name: 'Ankit Jain'
     })
 })
 
@@ -39,7 +39,7 @@ app.get('/help', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about', {
         title: "About",
-        name: 'Ankit jain'
+        name: 'Ankit Jain'
     })
 })
 
