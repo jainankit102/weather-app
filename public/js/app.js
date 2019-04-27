@@ -7,8 +7,9 @@ function longitude() {
 
 const weatherForm = document.querySelector('form');
 const inputEle = document.querySelector('input');
-const errorMessge = document.getElementById('message-1');
-const result = document.getElementById('message-2');
+const errorMessge = document.getElementById('errorMessage');
+const result = document.getElementById('summary');
+const details = document.getElementById('details');
 
 weatherForm.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -22,7 +23,30 @@ weatherForm.addEventListener('submit', (event) => {
                 errorMessge.textContent = response.error;
                 result.textContent = ''
             } else {
-                result.textContent = response.location + '\n' + response.tempreture;
+                // result.textContent = response.location + '\n' + response.tempreture;
+                const text = `<p> ${response.location} </p><p> ${response.tempreture} </p> 
+                <table class="key-value-table" summary="Wrather details.">
+                <caption>Weather details</caption>
+                <tbody>
+                    <tr>
+                        <th class="width-20">Max Temmpreature:</th>
+                        <td>${response.maxTemepratue}</td>
+                    </tr>
+                    <tr>
+                        <th>Min Tempreture</th>
+                        <td>${response.minTemepratue}</td>
+                    </tr>
+                    <tr>
+                        <th>Wind speed</th>
+                        <td>${response.windSpeed}</td>
+                    </tr>
+                    <tr>
+                        <th>Humidity</th>
+                        <td>${response.humidity}</td>
+                    </tr>
+                </tbody>
+            </table>`;
+            details.innerHTML = text;
             }
         });
     }

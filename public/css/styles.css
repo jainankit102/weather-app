@@ -39,6 +39,29 @@ img {
     flex-grow: 1;
 }
 
-#message-1{
+#message-1 {
     color: red;
+}
+
+table, th, td {
+    border: 1px solid cornflowerblue;
+}
+
+caption {
+    background-color: steelblue;
+    padding: 10px 0;
+    color: white;
+}
+
+table {
+    width: 450px;
+}
+
+th, td {
+    padding: 5px 10px;
+}
+
+th {
+    text-align: inherit;
+    width: 224px;
 }

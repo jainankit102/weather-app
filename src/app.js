@@ -71,11 +71,16 @@ app.get('/weather', (req, res) => {
             console.log('Response:', forecastData);
 
             res.send({
-                tempreture: forecastData,
+                tempreture: forecastData.result,
                 location,
                 address,
                 latitude,
-                longitude
+                longitude,
+                daySymmary: forecastData.weeklySummary,
+                maxTemepratue: forecastData.maxTemepratue,
+                minTemepratue: forecastData.minTemepratue,
+                windSpeed: forecastData.windSpeed,
+                humidity: forecastData.humidity
             })
         })
     })
